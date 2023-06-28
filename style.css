@@ -17,6 +17,10 @@ a {
     text-align: center;
 }
 
+.header-logo {
+    width: 150px;    
+}
+
 .navbar {    
     display: flex;
     flex-direction: row;
