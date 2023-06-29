@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
   <title>QBuscas</title>
 </head>
 
@@ -27,7 +28,9 @@
 
   <main class="search-section">
     <h1 class="page-name">QBuscas.com</h1>
-    <input type="text" id="search">
+    <form action="">
+      <input onkeypress="buscar()" type="text" id="search" placeholder="Restaurante, taxista, doctor...">
+    </form>
   </main>
 
   <section class="gallery-section">
