@@ -44,6 +44,7 @@ a {
 
 .page-name {
   padding-bottom: 1.5em;
+  font-size: 4em;  
 }
 
 #search {
@@ -60,6 +61,7 @@ a {
 .title-secciones {
   margin-top: 1em;
   margin-bottom: 2em;
+  font-size: 2.2em;
 }
 
 .navbar-secciones {
@@ -88,8 +90,7 @@ img {
 
 .btn {
   background-color: white;
-  border: 1px solid gray;
-  color: darkblue;
+  border: 1px solid gray;  
   padding: 0.5rem;
   text-transform: lowercase;
 }
@@ -159,7 +160,18 @@ img {
   overflow: hidden;
   position: relative;
   transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
-  ;
+
+  @media(min-width: 40rem) {
+    height: 250px;
+  }
+
+  @media(min-width: 45rem) {
+    height: 280px;
+  } 
+
+  @media(min-width: 56rem) {
+    height: 400px;
+  }  
 
   &::before {
     content: "";
@@ -176,24 +188,7 @@ img {
   }
 }
 
-.card__image--flowers {
-  background-image: url(https://unsplash.it/800/600?image=82);
-}
-
-.card__image--river {
-  background-image: url(https://unsplash.it/800/600?image=11);
-}
-
-.card__image--record {
-  background-image: url(https://unsplash.it/800/600?image=39);
-}
-
-.card__image--fence {
-  background-image: url(https://unsplash.it/800/600?image=59);
-}
-
-.card__title {
-  color: darkblue;
+.card__title {  
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
