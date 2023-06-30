@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+h1{
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 35px;
+}
+body{
+  background-color: #FAF7EF;
+  background-image: url("../src/neg-gal/quetzal.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#login{
+  max-width: 45%;
+  height: 500px;
+  box-shadow: 1px 1px 10px;
+}
+#iniciosesion{
+  background-color: white;
+  width: 60%;
+  float: left;
+  height: 100%;
+}
+#crearcuenta{
+  float: right;
+  width: 40%;
+  height: 450px;
+  height: 100%;
+  background-color: #F3745C;
+  color: white;
+  /*
+  background-color: #FB252D;*/
+}
+img{
+  width: 160px;
+}
+form{
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.inp{
+  margin-top: 30px;
+}
+input{
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #EDF4F3;
+  font-size: large;
+}
+a{
+  font-size: smaller;
+  color: gray;
+}
+.but{
+  margin: auto;
+  width: 200px;
+}
+#inises{
+  color: white;
+  background-color: #F3745C;
+  transition: transform 0.3s;
+}
+#inises:hover {
+  background-color: #2E5F5B;
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+#titu{
+  margin-top: 50%;
+}
+.crcu{
+  margin: auto;
+  text-align: center;
+  margin-top: 10%;
+}
+#crecu{
+  border: none;
+  background-color: #EDF4F3;
+  transition: transform 0.3s;
+
+}
+#crecu:hover {
+  background-color: #2E5F5B;
+  color: white;
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
