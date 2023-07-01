@@ -88,8 +88,11 @@ body{
 /* gallery-section */
 .gallery-section {
   text-align: center;
-  background-color: #EDF4F3;
-  margin: 4em;  
+  background-color: rgba(237, 244, 243, .9);  
+  margin: 4em;
+  box-shadow: -2px 9px 19px 0px rgba(0,0,0,0.5);
+-webkit-box-shadow: -2px 9px 19px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: -2px 9px 19px 0px rgba(0,0,0,0.5);  
 }
 
 .title-secciones {
