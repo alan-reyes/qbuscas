@@ -10,8 +10,7 @@ a {
 
 /* background */
 
-body {
-  background-color: #FAF7EF;
+body {  
   background-image: url("../src/neg-gal/Plaza_celistino_gasca_y_templo_de_San_Francisco_de_Asis_05_1\ \(2\).jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -26,7 +25,7 @@ body {
   align-items: center;
   text-align: center;
   font-size: 1.5em;
-  background-color: #EDF4F3;
+  background-color: rgba(237, 244, 243, .8);
 }
 
 .header-logo {
