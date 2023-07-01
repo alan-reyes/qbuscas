@@ -10,7 +10,7 @@ a {
 
 /* background */
 
-body{
+body {
   background-color: #FAF7EF;
   background-image: url("../src/neg-gal/Plaza_celistino_gasca_y_templo_de_San_Francisco_de_Asis_05_1\ \(2\).jpg");
   background-repeat: no-repeat;
@@ -42,14 +42,14 @@ body{
 
 .item__navbar {
   list-style-type: none;
-  padding: 8px 20px;    
+  padding: 8px 20px;
   color: #2E5F5B;
   border: none;
   border-radius: 25px;
-  text-align: center;  
+  text-align: center;
 }
 
-.item__navbar > a {
+.item__navbar>a {
   color: #2E5F5B;
 }
 
@@ -60,7 +60,7 @@ body{
   color: #EDF4F3;
 }
 
-.item__navbar > a:hover {
+.item__navbar>a:hover {
   background-color: #2E5F5B;
   transform: scale(1.1);
   transition: transform 0.3s;
@@ -70,12 +70,12 @@ body{
 /* search-section */
 .search-section {
   padding-top: 5em;
-  text-align: center;  
+  text-align: center;
 }
 
 .page-name {
   padding-bottom: 1.5em;
-  font-size: 4em;  
+  font-size: 4em;
 }
 
 #search {
@@ -85,18 +85,59 @@ body{
   border-radius: 15px;
 }
 
+.group {
+  display: flex;
+  position: relative;  
+  justify-content: center;
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: rgba(237, 244, 243, 1);
+  color: #0d0c22;
+  transition: .3s ease;
+  font-size: large;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(46, 95, 91, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+  /* left: 1rem; */
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 12px;  
+}
+
 /* gallery-section */
 .gallery-section {
   text-align: center;
-  background-color: rgba(237, 244, 243, .9);  
+  background-color: rgba(237, 244, 243, .9);
   margin: 4em;
-  box-shadow: -2px 9px 19px 0px rgba(0,0,0,0.5);
--webkit-box-shadow: -2px 9px 19px 0px rgba(0,0,0,0.5);
--moz-box-shadow: -2px 9px 19px 0px rgba(0,0,0,0.5);  
+  box-shadow: -2px 9px 19px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -2px 9px 19px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -2px 9px 19px 0px rgba(0, 0, 0, 0.5);
 }
 
 .title-secciones {
-  padding-top: 1em;  
+  padding-top: 1em;
   margin-bottom: 2em;
   font-size: 2.2em;
 }
@@ -127,7 +168,7 @@ img {
 
 .btn {
   background-color: #EDF4F3;
-  border: 1px solid gray;  
+  border: 1px solid gray;
   padding: 0.5rem;
   text-transform: lowercase;
 }
@@ -204,11 +245,11 @@ img {
 
   @media(min-width: 45rem) {
     height: 280px;
-  } 
+  }
 
   @media(min-width: 56rem) {
     height: 400px;
-  }  
+  }
 
   &::before {
     content: "";
@@ -225,7 +266,7 @@ img {
   }
 }
 
-.card__title {  
+.card__title {
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
