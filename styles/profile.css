@@ -163,8 +163,28 @@ table:hover {
 h5{
     font-size: 30px;
     color: gold;
-    text-shadow: -1px -1px 0 black,
-               1px -1px 0 black,
-               -1px 1px 0 black,
-               1px 1px 0 black;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+#garantia{
+    width: 60%;
+    padding: 1rem;
+    margin: auto;
+    background-color: aliceblue;
+    margin-top: 2rem;
+    text-align: center;
+}
+#certi{
+    width: 200px;
+    transition: transform .5s;
+}
+#certi:hover{
+    transform: scale(4.5);
+    transition: transform .5s;
+}
+#explica{
+    max-width: 40%;
+    margin: auto;
+}
+footer{
+    height: 200px;
 }
