@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+
 }
 
 body {
@@ -34,7 +38,6 @@ body {
   border-radius: 4px;
   margin-bottom: 16px;
   border: 1px solid orange;
-  font-family: 'calibri';
   font-size: 18px;
   color: black;
 }
