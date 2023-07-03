@@ -23,7 +23,7 @@
                             <input type="text" placeholder="Correo o número celular" name="Correo" id="Correo" required>
                         </div>
                         <div class="inp">
-                            <input type="password" placeholder="Contraseña" required>
+                            <input type="password" placeholder="Contraseña" name="contra" required>
                         </div>
                         <a href="">Olvidaste tu contraseña</a>
                         <div class="inp">
@@ -33,6 +33,7 @@
                     </form>
                 </div>
                 <div id="crearcuenta">
+                    <form action="createaccount.php">
                     <div class="crcu" id="titu">
                         <h1>¿Eres nuevo?</h1>
                     </div>
@@ -43,6 +44,7 @@
                     <div class="crcu">
                         <input type="submit" value="Crear Cuenta" class="but" id="crecu">
                     </div>
+                    </form>
                 </div>
             </div>
         </section>
