@@ -18,12 +18,12 @@
     <img src="src/logo-PhotoRoom.png-PhotoRoom.png" alt="Logo QBuscas.com" class="header-logo">
     <nav>
       <ul class="navbar">
-        <li class="item__navbar"><a href="Formulario.html">Ser en Vendedor</a></li>
-        <li class="item__navbar"><a href="profile.html">Mi Perfil</a></li>
-        <li class="item__navbar"><a href="underconstruction.html">Precios</a></li>
+        <li class="item__navbar"><a href="Formulario.php">Ser en Vendedor</a></li>
+        <li class="item__navbar"><a href="profile.php">Mi Perfil</a></li>
+        <li class="item__navbar"><a href="underconstruction.php">Precios</a></li>
       </ul>
     </nav>
-    <a href="Login.html" class="item__navbar">Registrarse</a>
+    <a href="Login.php" class="item__navbar">Registrarse</a>
   </header>
 
   <main class="search-section">
