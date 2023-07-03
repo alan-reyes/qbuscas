@@ -20,7 +20,7 @@
                             <h1>Ingrese a su cuenta</h1>
                         </div>
                         <div class="inp">
-                            <input type="text" placeholder="Correo o número celular" name="Correo" id="Correo" required>
+                            <input type="mail" placeholder="Correo o número celular" name="Correo" id="Correo" required>
                         </div>
                         <div class="inp">
                             <input type="password" placeholder="Contraseña" name="contra" required>
