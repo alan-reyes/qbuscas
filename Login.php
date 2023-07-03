@@ -33,7 +33,7 @@
                     </form>
                 </div>
                 <div id="crearcuenta">
-                    <form action="createaccount.php">
+                    <form action="createaccount.html">
                     <div class="crcu" id="titu">
                         <h1>¿Eres nuevo?</h1>
                     </div>
