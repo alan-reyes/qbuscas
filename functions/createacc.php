@@ -21,7 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO Usuarios (nombre, apellido_materno, apellido_paterno, correo, nombre_usuario, clave, rol) VALUES ('$Nombre', '$apellido_materno', '$apellido_paterno', '$Correo', '$nombre_usuario', '$Contra', '$rol')";
     $stmt = sqlsrv_query($conn, $query);
 
+
+    
     echo "registro exitoso";
+    //header("Location: ../Login.php");
+    //header("Location: ../Login.php?Correo=" . urlencode($Correo));
+
+    //$redireccion = "../Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
+    //header("Location: ../Login.php" . $redireccion);
+    $redireccion = "../Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
+    header("Location: " . $redireccion);
+    exit();
 }
 sqlsrv_close($conn);
 ?>

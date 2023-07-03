@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>QBuscas.com</title>
         <link rel="stylesheet" href="styles/loginstyle.css">
-
+        <link rel="icon" type="image/x-icon" href="src/Icono.ico">
     </head>
     <body>
         <section id="container">
@@ -19,12 +19,38 @@
                         <div>
                             <h1>Ingrese a su cuenta</h1>
                         </div>
-                        <div class="inp">
-                            <input type="mail" placeholder="Correo o número celular" name="Correo" id="Correo" required>
-                        </div>
-                        <div class="inp">
-                            <input type="password" placeholder="Contraseña" name="contra" required>
-                        </div>
+                        <?php 
+                                include 'functions/createacc.php';
+                                if (isset($_GET['Correo'])) {
+                                    $Correo = $_GET['Correo'];
+                                } else {
+                                    $Correo = "";
+                                }
+                                
+                                if (isset($_GET['Contra'])) {
+                                    $Contra = $_GET['Contra'];
+                                } else {
+                                    $Contra = "";
+                                }
+
+                                if (empty($Correo)) {
+                                    echo '<div class="inp">';
+                                    echo '<input type="email" placeholder="Correo o número celular" name="Correo" id="Correo" required>';
+                                    echo '</div>';
+                                    echo '<div class="inp">';
+                                    echo '<input type="password" placeholder="Contraseña" name="contra" required>';
+                                    echo '</div>';
+
+                                } else {
+                                    echo '<div class="inp">';
+                                    echo '<input type="email" placeholder="Correo o número celular" name="Correo" id="Correo" required value="' .$Correo. '">';
+                                    echo '</div>';
+                                    echo '<div class="inp">';
+                                    echo '<input type="password" placeholder="Contraseña" name="contra" required value="'.$Contra.'">';
+                                    echo '</div>';
+                                }
+                            
+                            ?>                     
                         <a href="">Olvidaste tu contraseña</a>
                         <div class="inp">
                             <input type="submit" value="Iniciar sesión"
