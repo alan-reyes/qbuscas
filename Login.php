@@ -15,15 +15,15 @@
                     <div id="logo">
                         <img src="src/logo-PhotoRoom.png-PhotoRoom.png" alt>
                     </div>
-                    <form action>
+                    <form action="functions/loginvalidation.php" method="POST">
                         <div>
                             <h1>Ingrese a su cuenta</h1>
                         </div>
                         <div class="inp">
-                            <input type="text" placeholder="Correo o número celular">
+                            <input type="text" placeholder="Correo o número celular" name="Correo" id="Correo" required>
                         </div>
                         <div class="inp">
-                            <input type="password" placeholder="Contraseña">
+                            <input type="password" placeholder="Contraseña" required>
                         </div>
                         <a href="">Olvidaste tu contraseña</a>
                         <div class="inp">
