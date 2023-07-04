@@ -11209,12 +11209,28 @@ body {
 
 #search {
   width: 40em;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 3em;
-  border-radius: 15px;  
+  border-radius: 15px;
+  font-size: 1.5vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+#search::placeholder { /* WebKit, Blink, Edge */
+  color: #fff;
 }
 
 #Buscar {
   background-color: #70151f;
   color: #fff;
+}
+
+#mainNav .navbar-brand {
+  font-weight: 900;
+  font-size: 3vw;
+}
+
+.nav-link {
+  font-size: 1.5vw;
 }

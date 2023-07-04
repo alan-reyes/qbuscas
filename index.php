@@ -40,10 +40,10 @@
                     <div class="text-center"> 
                         <form action="">
                             <div class="group mx-auto my-0 ">
-                                <input id="search" type="search" class="input" onkeypress="buscar()" placeholder="Restaurante, taxista, doctor...">
+                                <input id="search" type="search" class="input" placeholder="Restaurante, taxista, doctor...">
                             </div>
+                        <button class="btn btn-primary" href="#about" id="Buscar" type="submit">Buscar</button>
                         </form> 
-                        <a class="btn btn-primary" href="#about" id="Buscar">Buscar</a>
                     </div>
                 </div>
             </div>
