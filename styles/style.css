@@ -25,7 +25,6 @@ body {
   align-items: center;
   text-align: center;
   font-size: 1.5em;
-  background-color: rgba(237, 244, 243, .8);
 }
 
 .header-logo {
@@ -99,7 +98,6 @@ body {
   border: 2px solid transparent;
   border-radius: 8px;
   outline: none;
-  background-color: rgba(237, 244, 243, 1);
   color: #0d0c22;
   transition: .3s ease;
   font-size: large;
@@ -128,7 +126,6 @@ input:hover {
 /* gallery-section */
 .gallery-section {
   text-align: center;
-  background-color: rgba(237, 244, 243, .9);
   margin: 4em;
   box-shadow: -2px 9px 19px 0px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: -2px 9px 19px 0px rgba(0, 0, 0, 0.5);
