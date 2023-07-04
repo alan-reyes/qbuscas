@@ -44,21 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //exit();
 
 
-    <script>
-  // Obtener los valores de las variables PHP
-  var correo = "<?php echo $Correo; ?>";
-  var contra = "<?php echo $Contra; ?>";
-
-  // Codificar los valores para asegurar la URL
-  var correoCodificado = encodeURIComponent(correo);
-  var contraCodificada = encodeURIComponent(contra);
-
-  // Construir la URL de redirección con los valores codificados
-  var redireccion = "../Login.php?Correo=" + correoCodificado + "&Contra=" + contraCodificada;
-
-  // Redireccionar a la página Login.php
-  window.location.href = redireccion;
-</script>
+   
 
   
 
