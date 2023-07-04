@@ -26,8 +26,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">Ser Vendedor</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Mi perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Formulario.php">Ser Vendedor</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.php">Mi perfil</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.php">Iniciar sesión</a></li>
                     </ul>
                 </div>
