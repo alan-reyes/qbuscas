@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu cuenta</title>
+    <link rel="stylesheet" href="styles/createaccount.css">
+</head>
+<body>
+    <section id="container">
+        <div id="crearcuenta">
+            <form action="functions/createacc.php" method="POST">
+                <h1>Completa con tus datos</h1>
+                <input type="text" placeholder="Nombre" name="Nombre" id="Nombre" required>
+                <input type="text" placeholder="Apellido Materno" name="apellido_materno" id="apellido_materno" required>
+                <input type="text" placeholder="Apellido Paterno" name="apellido_paterno" id="apellido_paterno" requiered>
+                <input type="text" placeholder="Alias" name="nombre_usuario" id="nombre_usuario">
+                <input type="email" placeholder="Correo" name="Correo" id="Correo" required>
+                <input type="password" placeholder="Contraseña" name="contra" id="contra" required>
+                <select name="rol" id="rol">
+                    <option selected>Selecciona tu rol</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Cliente">Cliente</option>
+                  </select>
+                  <hr>
+                <input type="submit" id="crear" value="Crear Cuenta">
+            </form>
+        </div>
+    </section>
+</body>
+</html>
