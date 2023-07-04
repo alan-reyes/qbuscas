@@ -28,7 +28,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">Ser Vendedor</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Mi perfil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Login.php">Iniciar sesión</a></li>
                     </ul>
                 </div>
             </div>
