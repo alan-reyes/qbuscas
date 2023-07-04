@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //$redireccion = "../Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
     //header("Location: ../Login.php" . $redireccion);
-    $redireccion = "../Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
+    $redireccion = "http://qbuscas.azurewebsites.net/Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
     header("Location: " . $redireccion);
     exit();
 }
