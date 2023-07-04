@@ -43,11 +43,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //header("Location: " . $redireccion);
     //exit();
 
+ 
 
-   
 
+
+// Impresión de la línea de código JavaScript en la página
   
+echo '<script>';
+
+echo 'var correo = "'.$Correo.'";';
+echo 'var contra = "'.$Contra.'";';
+
+echo 'var correoCodificado = encodeURIComponent(correo);';
+echo 'var contraCodificada = encodeURIComponent(contra);';
+echo 'var redireccion = "../Login.php?Correo=" + correoCodificado + "&Contra=" + contraCodificada;';
+
+
+  //echo'alert(redireccion);';
+  //echo 'window.location.href = '.$redireccion.';';
+  echo 'window.location.href = redireccion;';
+echo '</script>';
+
 
 }
 sqlsrv_close($conn);
-?>
+
