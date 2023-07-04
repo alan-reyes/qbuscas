@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     
-    echo "registro exitoso limpieza de buffer 2";
+    echo "registro exitoso limpieza de buffer 3";
     //header("Location: ../Login.php");
     //header("Location: ../Login.php?Correo=" . urlencode($Correo));
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //header("Location: " . $redireccion);
     //exit();
 
-    $redireccion = $_SERVER['DOCUMENT_ROOT'] . "http://qbuscas.azurewebsites.net/Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
+    $redireccion = $_SERVER['DOCUMENT_ROOT'] . "qbuscas.azurewebsites.net/Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
     header("Location: " . $redireccion);
     exit();
 }
