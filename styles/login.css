@@ -23,7 +23,6 @@ body {
   display: flex;
   gap: 0;
   max-width: 45%;
-  /* Ajustamos el ancho máximo al 45% */
   margin: 0 auto;
 }
 

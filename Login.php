@@ -13,67 +13,48 @@
 </head>
 <body>
     <div class="container">
-        <!-- Columna izquierda - Iniciar Sesión -->
         <div class="left-column">
             <div class="text-center">
                 <h1 class="mb-4">Iniciar Sesión</h1>
                 <form action="functions/loginvalidation.php" method="POST">
-
-
-                        
-                    
-                        
-                    
-
-
-
                     <?php 
-                                include 'functions/createacc.php';
-                                if (isset($_GET['Correo'])) {
-                                    $Correo = $_GET['Correo'];
-                                } else {
-                                    $Correo = "";
-                                }
-                                
-                                if (isset($_GET['Contra'])) {
-                                    $Contra = $_GET['Contra'];
-                                } else {
-                                    $Contra = "";
-                                }
+                    include 'functions/createacc.php';
+                    if (isset($_GET['Correo'])) {
+                        $Correo = $_GET['Correo'];
+                    } else {
+                        $Correo = "";
+                    }
+                    
+                    if (isset($_GET['Contra'])) {
+                        $Contra = $_GET['Contra'];
+                    } else {
+                        $Contra = "";
+                    }
 
-                                if (empty($Correo)) {
-                                    echo '<div class="form-group">';
-                                    echo '<input type="email" class="form-control" placeholder="Correo o número celular" name="Correo" required>';
-                                    echo '</div>';
-                                    echo '<div class="form-group">';
-                                    echo '<input type="password" class="form-control" placeholder="Contraseña" name="contra" required>';
-                                    echo '</div>';
+                    if (empty($Correo)) {
+                        echo '<div class="form-group">';
+                        echo '<input type="email" class="form-control" placeholder="Correo o número celular" name="Correo" required>';
+                        echo '</div>';
+                        echo '<div class="form-group">';
+                        echo '<input type="password" class="form-control" placeholder="Contraseña" name="contra" required>';
+                        echo '</div>';
 
-                                } else {
-                                    echo '<div class="form-group">';
-                                    echo '<<input type="email" class="form-control" placeholder="Correo o número celular" name="Correo" required value="' .$Correo. '">';
-                                    echo '</div>';
-                                    echo '<div class="form-group">';
-                                    echo '<input type="password" class="form-control" placeholder="Contraseña" name="contra" required value="'.$Contra.'">';
-                                    echo '</div>';
-                                }
-                            
-                            ?> 
-
-
+                    } else {
+                        echo '<div class="form-group">';
+                        echo '<<input type="email" class="form-control" placeholder="Correo o número celular" name="Correo" required value="' .$Correo. '">';
+                        echo '</div>';
+                        echo '<div class="form-group">';
+                        echo '<input type="password" class="form-control" placeholder="Contraseña" name="contra" required value="'.$Contra.'">';
+                        echo '</div>';
+                    }
+                    ?> 
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary btn-block" value="Iniciar Sesión">
                     </div>
-
-
-
-
-
                 </form>
             </div>
         </div>
 
-        <!-- Columna derecha - Crear Cuenta -->
         <div class="right-column">
             <div class="text-center">
                 <h1 class="mb-4">Crear Cuenta</h1>
