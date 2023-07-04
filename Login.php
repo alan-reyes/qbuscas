@@ -18,6 +18,7 @@
                     <form action="functions/loginvalidation.php" method="POST">
                         <div>
                             <h1>Ingrese a su cuenta</h1>
+                            <h2>test</h2>
                         </div>
                         <?php 
                                 include 'functions/createacc.php';
