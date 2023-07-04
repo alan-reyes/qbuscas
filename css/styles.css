@@ -11234,3 +11234,36 @@ body {
 .nav-link {
   font-size: 1.5vw;
 }
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 600vh;
+    padding: 0;
+  }
+}
+
+
+@media (min-width: 1100px) {
+  .search-container {
+    margin-top: 40vh;
+  }
+}
+
+@media (max-width: 990px) and (min-width: 1100px) {
+  .search-container {
+    margin-top: 20vh;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 990px) {
+  .search-container {
+    margin-top: 20vh;
+  }
+}
+
+@media (max-width: 620px) {
+  .search-container {
+    margin-top: 10vh;
+  }
+}
+
