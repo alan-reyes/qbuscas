@@ -11267,3 +11267,6 @@ body {
   }
 }
 
+div#container-gallery {
+  margin-top: 40vh;
+}

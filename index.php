@@ -16,10 +16,41 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+
+        <?php 
+
+if (isset($_GET['id'])) {
+    $id = (int) $_GET['id'];
+} else {
+    $id = (int) 7;
+}
+
+if (!empty($id)) {
+    try 
+            {                
+                include 'functions/coneccion.php';
+                $conn = sqlsrv_connect($serverName, $connectionOptions);
+                $tsql = "SELECT nombre_usuario FROM Usuarios WHERE id = ".$id;
+                $getUser = sqlsrv_query($conn, $tsql);
+                $userName = '';
+                if ($getUser == FALSE)
+                die(FormatErrors(sqlsrv_errors()));                
+                while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC))
+                {
+                    $userName = $row['nombre_usuario'];                     
+                }                
+                sqlsrv_free_stmt($getUser);
+                sqlsrv_close($conn);
+            } catch (Exception $e) {
+                echo("Error!");
+            }            
+}            
+        ?> 
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Qbuscas.com</a>
+                <a class="navbar-brand" href="index.php">Qbuscas.com</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -29,6 +60,7 @@
                         <li class="nav-item"><a class="nav-link" href="Formulario.php">Ser Vendedor</a></li>
                         <li class="nav-item"><a class="nav-link" href="profile.php">Mi perfil</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.php">Iniciar sesión</a></li>
+                        <li class="nav-item"><p class="nav-link" href="Login.php"><?php echo $userName; ?></p></li>
                     </ul>
                 </div>
             </div>
@@ -48,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="container px-4 px-lg-5">
+            <div class="container-gallery container px-4 px-lg-5" id="container-gallery">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
