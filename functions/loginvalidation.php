@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Contra = $_POST["contra"];
 
     // Realizar la consulta para verificar si el correo existe en la tabla Usuarios
-    $query = "SELECT COUNT(*) AS count FROM Usuarios WHERE Correo = '$Correo' and clave = '$Contra'";
+    $query = "SELECT COUNT(*),id AS count FROM Usuarios WHERE Correo = '$Correo' and clave = '$Contra'";
     $params = array($Correo);
     $stmt = sqlsrv_query($conn, $query, $params);
 
@@ -23,15 +23,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
     $count = $row['count'];
+    $id = $row['id'];
     echo $count;
     // Cerrar la conexión
     sqlsrv_close($conn);
 
     if ($count > 0) {
         echo '<script>';
-        
-        echo 'window.location.href = "../index.php";';
+        echo 'var id = "'.$id.'";';
+        echo 'var idCodificado = encodeURIComponent(id);';
+        echo 'var redireccion = "../index.php?id=" + idCodificado;';
+        echo 'window.location.href = redireccion;';
+        //echo 'window.location.href = "../index.php";';
         echo '</script>';
+
+//desde aca es nuevo
+        
+        
+        
+        
+          //echo'alert(redireccion);';
+          //echo 'window.location.href = '.$redireccion.';';
+         // echo 'window.location.href = redireccion;';
+
+
+
+
+
     } else {
         echo '<script>';
         echo 'window.location.href = "../Login.php";';
