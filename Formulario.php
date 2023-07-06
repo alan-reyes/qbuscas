@@ -1,57 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="styles/Formstyle.css">
-  <title>Formulario Registro</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/estilo.css">
+	<title>Formulario de registro</title>
+
+    <script>
+        function mostrarCampoOtra() {
+          var opcion = document.getElementById("categoria").value;
+          var campoOtra = document.getElementById("campo-otra");
+    
+          if (opcion === "otra") {
+            campoOtra.style.display = "block";
+          } else {
+            campoOtra.style.display = "none";
+          }
+        }
+      </script>
+
 </head>
 <body>
-  <section class="form-register">
-    <h4>Formulario Registro</h4>
-    
-    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombre:">
+	<section class="form_section">
+		<h3 class="form_header">Formulario de registro</h3>
+		<input class="input_forms" type="text" name="nombreNegocio" placeholder="Ingrese el nombre de su negocio" required>
 
-    <input class="controls" type="text" name="apePat" id="apePat" placeholder="Apellido Paterno:">
+		<input class="input_forms" type="text" name="alias" placeholder=" Ingrese un alias de su persona o negocio">
+         
+		<input class="input_forms" type="text" name="direccion" placeholder="Ingrese la direccion de su establecimiento">
+        
+        <p>DATOS DE CONTACTO:</p>
 
-    <input class="controls" type="text" name="apeMat" id="apeMat" placeholder="Apellido Materno:">
+		<input class="input_forms" type="tel" name="telefono" placeholder="Ingrese un numero telefonico">
 
-    <input class="controls" type="text" name="alias" id="alias" placeholder="Alias (Opcional): ">
+        <input class="input_forms" type="email" name="correo" placeholder="Ingrese un correo electronico">
 
-    <input class="controls" type="int" name="edad" id="edad" placeholder="Edad: ">
+        <p>AGREGA ALGUNAS IMAGENES DE SU NEGOCIO</p>
+        <input type="file" name="imagenes" multiple="multiple" required>
 
-    <label for="¿Qué ofrece?:">
+        <p>AGREGA UNA CONSTANCIA O CERTIFICADO DE SU OFICIO, PROFESION O NEGOCIO</p>
+        <input type="file" name="contancia">
 
-  
-    <input type="radio" id="producto" name="opcion" value="producto"> PRODUCTO
-    <input class="controls" type="text" name="NombrePro" id="NombrePro" placeholder="Nombre: ">
-    <input class="controls" type="int" name="Precio" id="precio" placeholder="Precio: ">
-    <input class="controls" type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion: ">
+        <p>CARACTERISTICAS DE SU NEGOCIO:</p>
+        <input class="input_forms" type="text" name="Caracteristica1" placeholder="Caracteristica 1" required>
+        <input class="input_forms" type="text" name="Caracteristica2" placeholder="Caracteristica 2" required>
+        <input class="input_forms" type="text" name="Caracteristica3" placeholder="Caracteristica 3" required>
+        <input class="input_forms" type="text" name="Caracteristica4" placeholder="Caracteristica 4" required>
 
-    <h1>Subir Imagen</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="imagen" id="imagen">
+        <p>DESCRIBE BREVEMENTE TU NEGOCIO:</p>
+        <input class="input_forms" type="text" name="Descripcion" placeholder="Descripcion" required> 
+        
+        <p>CATEGORIA DE SU NEGOCIO:</p>
+        <label for="categoria">Categoría:</label>
+  <select id="categoria" onchange="mostrarCampoOtra()" required>
+    <option value="opcion1">Comida</option>
+    <option value="opcion2">Belleza</option>
+    <option value="opcion2">Salud</option>
+    <option value="opcion2">Turismo</option>
+    <option value="otra">Otra</option>
+  </select>
 
-    <br></br>
+  <div id="campo-otra" style="display: none;">
+    <label for="otra-categoria">Ingresa la categoría:</label>
+    <input type="text" id="otra-categoria">
+  </div>
+        <input class="input_button" type="submit" value="Registrar">
 
-    <input type="radio" id="Servicio" name="opcion" value="servicio"> SERVICIO
-    <input class="controls" type="text" name="TipoServ" id="TipoServ" placeholder="Tipo de Servicio: ">
-    <input class="controls" type="int" name="costo" id="costo" placeholder="Costo: ">
-    <input class="controls" type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion: ">
-    <h1>Subir Imagen</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="imagen" id="imagen">
-
-    <p>Informacion de contacto:</p>
-    <input class="controls" type="email" name="correo" id="correo" placeholder="Correo electro:">
-
-    <input class="controls" type="tel" name="telefono" id="telefono" placeholder="Telefono:">
-
-    <input class="controls" type="text" name="direccion" id="direccion" placeholder="Direccion:">
-
-    <input class="botons" type="submit" value="Registrar">
-  </section>
+	</section>
 
 </body>
 </html>

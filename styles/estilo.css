@@ -1,0 +1,92 @@
+.form_section {
+	width: 400px;
+	background-color: rgba(36, 48, 63, .7);
+	padding: 60px;
+	padding-left: 45px;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 53px;
+	border-radius: 3px;
+	font-family: sans-serif,cursive;
+	color: white;
+
+}
+
+.form_header {
+	font-size: 22px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.input_forms {
+	width: 100%;
+	background-color: #24303c;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 1px solid #1f53c5;
+	color: white;
+}
+
+.form_terms, .form_cuestion {
+	height: 40px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 40px;
+}
+
+.form_terms a, .form_cuestion a {
+	text-decoration: none;
+	color: #008080;
+}
+
+.form_terms a:hover, .form_cuestion a:hover {
+	text-decoration: underline;
+}
+
+.input_button {
+	width: 100%;
+	background-color: #1f53c4;
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 16px 0;
+	margin-left: 11px;
+	font-size: 16px;
+	border-radius: 3px;
+}
+
+.input_button:hover {
+	background-color: #287cf0;
+	cursor: pointer;
+}
+
+
+body {
+	background: linear-gradient(45deg,
+ 						rgba(0,31,69,1) 0%,
+ 						rgba(20,20,164,1) 33%,
+ 						rgba(40,124,240,1) 60%,
+ 						rgba(0,212,255,1) 100%);
+
+}
+
+
+/*diseño responsivo*/
+
+@media screen and (max-width: 450px) {
+	.form_section {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: auto;
+	}
+	.form_terms {
+		height: 80px;
+	}
+
+	.input_button {
+		margin: 0 0 0 11px;
+	}
+}
+
