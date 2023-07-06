@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt === false) {
         die("Error en la consulta: " . print_r(sqlsrv_errors(), true));
     }
-    $id = sqlsrv_get_field($stmt, 0);
+   // $id = sqlsrv_get_field($stmt, 0);
+    $id = 1;
     $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
     $count = $row['count'];
     echo $count;
