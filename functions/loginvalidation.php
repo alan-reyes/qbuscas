@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($count > 0) {
         echo '<script>';
+        
         echo 'window.location.href = "../index.php";';
         echo '</script>';
     } else {
