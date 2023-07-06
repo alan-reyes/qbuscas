@@ -32,11 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
     $id = $row['id'];
     $count = $row['count'];
-    echo $count;
-    echo $id;
     // Cerrar la conexión
     sqlsrv_close($conn);
-
     if ($count > 0) {
         echo '<script>';
         echo 'var id = "'.$id.'";';
