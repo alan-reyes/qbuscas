@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Contra = $_POST["contra"];
 
     // Realizar la consulta para verificar si el correo existe en la tabla Usuarios
-    $query = "SELECT id, COUNT(*) AS count FROM Usuarios WHERE Correo = '$Correo' and clave = '$Contra'";
+    $query = "SELECT id, COUNT(*) AS count FROM Usuarios WHERE Correo = '$Correo' and clave = '$Contra' GROUP BY id";
     $query2= "SELECT ID from Usuarios WHERE Correo = '$Correo' and clave = '$Contra'";
     $params = array($Correo);
     $stmt = sqlsrv_query($conn, $query, $params);    
