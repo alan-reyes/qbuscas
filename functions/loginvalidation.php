@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     sqlsrv_close($conn);
     if ($count > 0) {
         echo '<script>';
-        echo 'var id = "'.$id.'";';
+        echo 'var id = '.$id.';';
         echo 'alert(id)';
         echo 'var idCodificado = encodeURIComponent(id);';
         echo 'var redireccion = "../index.php?id=" + idCodificado;';
