@@ -41,7 +41,7 @@
 
                     } else {
                         echo '<div class="form-group">';
-                        echo '<<input type="email" class="form-control" placeholder="Correo o número celular" name="Correo" required value="' .$Correo. '">';
+                        echo '<input type="email" class="form-control" placeholder="Correo o número celular" name="Correo" required value="' .$Correo. '">';
                         echo '</div>';
                         echo '<div class="form-group">';
                         echo '<input type="password" class="form-control" placeholder="Contraseña" name="contra" required value="'.$Contra.'">';

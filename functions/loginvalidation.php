@@ -28,12 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     sqlsrv_close($conn);
 
     if ($count > 0) {
-        header("Location: ../index.php");
-        exit();
+        echo '<script>';
+        echo 'window.location.href = "../index.php";';
+        echo '</script>';
     } else {
-        header("Location: ../Login.php");
-        exit();
-
+        echo '<script>';
+        echo 'window.location.href = "../Login.php";';
+        echo '</script>';
     }
 }
 sqlsrv_close($conn);

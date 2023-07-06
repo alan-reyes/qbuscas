@@ -11,7 +11,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,12 +45,15 @@ body {
   background-color: white;
   border-color: #F3745C;
   color: #F3745C;
+  border-radius: 25px;
 }
 
 .btn-secondary {
   background-color: #F3745C;
   border-color: #F3745C;
   color: white;
+  border-radius: 25px;
+
 }
 
 @media (max-width: 768px) {
@@ -71,7 +73,7 @@ input[type="password"] {
   width: 100%;
   height: 60px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   text-align: center;
   font-size: medium;
   margin-bottom: 15px;

@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     
-    echo "registro exitoso limpieza de buffer 3";
+    //echo "registro exitoso limpieza de buffer 3";
     //header("Location: ../Login.php");
     //header("Location: ../Login.php?Correo=" . urlencode($Correo));
 
@@ -39,9 +39,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //header("Location: " . $redireccion);
     //exit();
 
-    $redireccion = $_SERVER['DOCUMENT_ROOT'] . "qbuscas.azurewebsites.net/Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
-    header("Location: " . $redireccion);
-    exit();
+    //$redireccion = $_SERVER['DOCUMENT_ROOT'] . "qbuscas.azurewebsites.net/Login.php?Correo=" . urlencode($Correo) . "&Contra=" . urlencode($Contra);
+    //header("Location: " . $redireccion);
+    //exit();
+
+ 
+
+
+
+// Impresión de la línea de código JavaScript en la página
+  
+echo '<script>';
+
+echo 'var correo = "'.$Correo.'";';
+echo 'var contra = "'.$Contra.'";';
+
+echo 'var correoCodificado = encodeURIComponent(correo);';
+echo 'var contraCodificada = encodeURIComponent(contra);';
+echo 'var redireccion = "../Login.php?Correo=" + correoCodificado + "&Contra=" + contraCodificada;';
+
+
+  //echo'alert(redireccion);';
+  //echo 'window.location.href = '.$redireccion.';';
+  echo 'window.location.href = redireccion;';
+echo '</script>';
+
+
 }
 sqlsrv_close($conn);
-?>
+
