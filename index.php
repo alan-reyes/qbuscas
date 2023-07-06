@@ -22,10 +22,11 @@
 if (isset($_GET['id'])) {
     $id = (int) $_GET['id'];
 } else {
-    $id = (int) 7;
+    $id = 0;
+    $userName = '';
 }
 
-if (!empty($id)) {
+if ($id > 0) {
     try 
             {                
                 include 'functions/coneccion.php';
@@ -43,8 +44,25 @@ if (!empty($id)) {
                 sqlsrv_close($conn);
             } catch (Exception $e) {
                 echo("Error!");
-            }            
-}            
+            }
+
+            echo '<script>';
+
+            echo 'var navUsuario = document.getElementById("navUsuario");';
+            echo 'navUsuario.style.display = "inline";';
+
+            echo 'var navIniciarSesion = document.getElementById("navIniciarSesion");';
+            echo 'navIniciarSesion.style.display = "none";';
+
+            echo '</script>';
+} else {
+    echo '<script>';
+
+            echo 'var navUsuario = document.getElementById("navUsuario");';
+            echo 'navUsuario.style.display = "none"';            
+
+            echo '</script>';
+}
         ?> 
 
         <!-- Navigation-->
@@ -57,10 +75,10 @@ if (!empty($id)) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="Formulario.php">Ser Vendedor</a></li>
-                        <li class="nav-item"><a class="nav-link" href="profile.php">Mi perfil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Login.php">Iniciar sesión</a></li>
-                        <li class="nav-item"><p class="nav-link" href="Login.php"><?php echo $userName; ?></p></li>
+                        <li class="nav-item"><a class="nav-link" href="Formulario.php" id="navSerVendedor">Ser Vendedor</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.php" id="navMiPerfil">Mi perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Login.php" id="navIniciarSesion">Iniciar sesión</a></li>
+                        <li class="nav-item"><p class="nav-link" href="Login.php" id="navUsuario"><?php echo $userName; ?></p></li>
                     </ul>
                 </div>
             </div>
