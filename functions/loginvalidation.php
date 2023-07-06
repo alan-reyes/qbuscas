@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($count > 0) {
         echo '<script>';
         echo 'var id = '.$id.';';
-        echo 'alert(id)';
         echo 'var idCodificado = encodeURIComponent(id);';
         echo 'var redireccion = "../index.php?id=" + idCodificado;';
         echo 'window.location.href = redireccion;';
