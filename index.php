@@ -46,15 +46,13 @@ if ($id > 0) {
                 echo("Error!");
             }
 
-            echo '<script>';
-
-            echo 'var navUsuario = document.getElementById("navUsuario");';
-            echo 'navUsuario.style.display = "inline";';
-
-            echo 'var navIniciarSesion = document.getElementById("navIniciarSesion");';
-            echo 'navIniciarSesion.style.display = "none";';
-
-            echo '</script>';
+            echo 
+            '<script>
+            var navUsuario = document.getElementById("navUsuario");
+            navUsuario.style.display = "inline";
+            var navIniciarSesion = document.getElementById("navIniciarSesion");;
+            navIniciarSesion.style.display = "none";
+            </script>';
 } else {
     echo '<script>';
 
