@@ -1,3 +1,9 @@
+body{
+	background-image: url("../src/neg-gal/Plaza_celistino_gasca_y_templo_de_San_Francisco_de_Asis_05_1\ \(2\).jpg");
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
 .form_section {
 	width: 400px;
 	background-color: rgba(36, 48, 63, .7);
@@ -62,14 +68,7 @@
 }
 
 
-body {
-	background: linear-gradient(45deg,
- 						rgba(0,31,69,1) 0%,
- 						rgba(20,20,164,1) 33%,
- 						rgba(40,124,240,1) 60%,
- 						rgba(0,212,255,1) 100%);
 
-}
 
 
 /*diseño responsivo*/
