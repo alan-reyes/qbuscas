@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto&display=swap');
+    *{
+        text-align: justify;
+        font-family: 'Quicksand', sans-serif;
+    }
+    body{
+        background-image: url("../assets/img/cuetzalan01.jpg");
+        background-repeat: no-repeat;
+    }
+    .custom-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .custom-row .col-md-6 {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+    
+    .custom-section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .custom-section img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .custom-section img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    #imageModal .modal-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+    }
+
+    #imageModal .modal-content {
+      max-height: 90vh;
+      max-width: 90vw;
+      overflow: auto;
+    }
+
+    #imageModal .modal-body {
+      text-align: center;
+    }
+   
+    .table-responsive{
+        border-radius: 10px;
+
+    }
+    table{
+
+        justify-content: center;
+        text-align: center;
+        border: none;
+    }
+    img{
+        border-radius: 10px;
+    }
+   .container{
+    margin-bottom: 100px;
+    box-shadow: 10px 10px 10px;
+    background-color: #FFFFFF99;
+
+   }
