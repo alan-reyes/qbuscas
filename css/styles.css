@@ -11313,8 +11313,10 @@ img {
 .btn {
   background-color: #EDF4F3;
   border: 1px solid gray;
-  padding: 0.5rem;
+  padding: 0.7rem;
   text-transform: lowercase;
+  font-size: 1.2vw;
+
 }
 
 .btn--block {
@@ -11461,4 +11463,12 @@ img.card__image {
 button.btn.btn--block.card__btn {
   height: 45px;
   width: 33%;
+}
+
+button.btn.btn--block.card__btn {
+  display: none;
+}
+
+#navMiPerfil {
+  display: none;
 }
