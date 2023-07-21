@@ -32,6 +32,7 @@
       $categoria = "";
       $descripcion = "";
       $garantia = "";
+      $imagarantia = "";
 
       if ($id > 0) {
         try 
@@ -56,6 +57,7 @@
                 $telefono = $row['telefono'];
                 $correo = $row['correo'];
                 $garantia = $row ['garantia'];
+                $imagarantia = $row ['imagen_garantia'];
             }                
             sqlsrv_free_stmt($getUser);
             sqlsrv_close($conn);
@@ -106,7 +108,7 @@
                 <div class="col-md-4">
                   <h2>Contacto</h2>
                   <h3><?php echo $telefono; ?></h3>
-                  <h3><?php echo $correo; ?></h3>
+                  <h5><?php echo $correo; ?></h5>
                 </div>
             </div>
         </div>
@@ -154,9 +156,9 @@
                 <div class="row">
                   <div class="col-md-6 offset-md-3">
                     <div class="custom-section">
-                      <img src="img/logo-titulo-universitario.png" alt="Imagen" onclick="showImage(this)">
+                      <img src="<?php echo $imagarantia;?>" alt="Imagen" onclick="showImage(this)">
                       <h1 style="color: white;">Garantía</h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      <h2><?php echo $garantia;?></h2>
                     </div>
                   </div>
                 </div>
