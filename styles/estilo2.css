@@ -22,7 +22,7 @@ body {
 
 /* Estilos para la sección del formulario */
 .form_section {
-  max-width: 400px;
+  max-width: 700px;
   margin: 20px auto;
   padding: 20px;
   border: 2px;
@@ -42,7 +42,7 @@ body {
 
 /* Estilos para los campos de entrada */
 .input_forms {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px ;
@@ -68,7 +68,7 @@ body {
 
 /* Estilos para la lista desplegable */
 select {
-  width: 100%;
+  width: 40%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px;
@@ -111,4 +111,7 @@ select {
   .input_button {
     margin: 0 0 0 11px;
   }
+}
+hr{
+  margin: 10px;
 }
