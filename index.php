@@ -29,7 +29,6 @@ if (isset($_GET['id'])) {
     $id = 0;
     $userName = '';
 }
-
 if ($id > 0) {
     try 
             {                
@@ -65,7 +64,7 @@ if ($id > 0) {
 
             echo '</script>';
 }
-        ?>
+?>    
 
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -100,26 +99,11 @@ if ($id > 0) {
             <div class="group mx-auto my-0 ">
               <input id="search" type="search" class="input" placeholder="Restaurante, taxista, doctor...">
             </div>
-            <button class="btn btn-primary" href="#about" id="Buscar" type="submit">Buscar</button>
+            <button class="btn btn-primary"  id="Buscar" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </div>
-
-    <!-- <div class="container-gallery container px-4 px-lg-5" id="container-gallery">
-      <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
-          <p class="text-white-50">
-            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download
-            the template on
-            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-            The theme is open source, and you can use it for any purpose, personal or commercial.
-          </p>
-        </div>
-      </div>
-      <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
-    </div> -->
     <div class="gallery-section">
       <h2 class="title-secciones">Secciones</h2>
       <!-- <nav>
@@ -131,12 +115,27 @@ if ($id > 0) {
           <li class="item__navbar"><a href="">Salud</a></li>
           <li class="item__navbar"><a href="">Turismo</a></li>
         </ul>
-      </nav> -->
+      </nav> -->        
+
       <!-- Cards -->
       <ul class="cards">
-        <li class="cards__item">
+      <?php
+// llenado de galeria
+include 'functions/coneccion.php';
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+$sql = "SELECT alias, descripcion, categoria, image_uno FROM formulario2";
+$getUser = sqlsrv_query($conn, $sql);
+
+    // output data of each row
+    while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC)) {                
+        $nombreNeg = $row['nombreNeg'];
+        $descripcion = $row['descripcion'];
+        $categoria = $row['categoria'];
+        $image_uno = $row['image_uno'];
+        echo 
+        '<li class="cards__item">
           <div class="card">
-            <img class="card__image" src="https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg" ></img>
+            <img class="card__image" src="'.$image_uno.'">
             <div class="card__content">
               <p class="card__category">Comida</p>
               <p class="card__title">Restaurante La Época de Oro</p>
@@ -150,103 +149,17 @@ if ($id > 0) {
               </div>
             </div>
           </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <img class="card__image" src="src/neg-gal/estetica.jpeg"></img>
-            <div class="card__content">
-              <p class="card__category">Belleza</p>
-              <div class="card__title">Estética Kareny</div>
-              <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless
-                value that serves as a proportion. It dictates what amount of the available space inside the flex
-                container the item should take up.</p>
-              <div class="card__tags__section">
-                <button class="btn btn--block card__btn">Corte</button>
-                <button class="btn btn--block card__btn">Estetica</button>
-                <button class="btn btn--block card__btn">Belleza</button>
-                <button class="btn btn--block card__btn">Cabello</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <img class="card__image" src="src/neg-gal/ropaamericana.jpeg"></img>
-            <div class="card__content">
-              <p class="card__category">Ropa</p>
-              <div class="card__title">Ropa americana</div>
-              <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless
-                value that serves as a proportion. It dictates what amount of the available space inside the flex
-                container the item should take up.</p>
-              <div class="card__tags__section">
-                <button class="btn btn--block card__btn">ropa</button>
-                <button class="btn btn--block card__btn">americana</button>
-                <button class="btn btn--block card__btn">moda</button>
-                <button class="btn btn--block card__btn">segunda</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <img class="card__image" src="src/neg-gal/labuenavida.jpeg"></img>
-            <div class="card__content">
-              <p class="card__category">Comida</p>
-              <div class="card__title">Restaurante Buena Vida</div>
-              <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless
-                value that serves as a proportion. It dictates what amount of the available space inside the flex
-                container the item should take up.</p>
-              <div class="card__tags__section">
-                <button class="btn btn--block card__btn">comida</button>
-                <button class="btn btn--block card__btn">tipica</button>
-                <button class="btn btn--block card__btn">Restuarant</button>
-                <button class="btn btn--block card__btn">gastronomia</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <img class="card__image" src="src/neg-gal/cafetales.jpeg"></img>
-            <div class="card__content">
-              <p class="card__category">Cafetería</p>
-              <div class="card__title">Los Cafetales</div>
-              <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless
-                value that serves as a proportion. It dictates what amount of the available space inside the flex
-                container the item should take up.</p>
-              <div class="card__tags__section">
-                <button class="btn btn--block card__btn">cafe</button>
-                <button class="btn btn--block card__btn">bebidas</button>
-                <button class="btn btn--block card__btn">dulces</button>
-                <button class="btn btn--block card__btn">comida</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="cards__item">
-          <div class="card">
-            <img class="card__image" src="src/neg-gal/simi.jpeg"></img>
-            <div class="card__content">
-              <p class="card__category">Salud</p>
-              <div class="card__title">Doctor Simi</div>
-              <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless
-                value that serves as a proportion. It dictates what amount of the available space inside the flex
-                container the item should take up.</p>
-              <div class="card__tags__section">
-                <button class="btn btn--block card__btn">doctor</button>
-                <button class="btn btn--block card__btn">consultas</button>
-                <button class="btn btn--block card__btn">similar</button>
-                <button class="btn btn--block card__btn">medico</button>
-              </div>
-            </div>
-          </div>
-        </li>
+        </li>'; 
+    }
+
+?>  
+               
       </ul>
     </div>
   </main>
   <!-- Footer-->
   <footer class="footer bg-black small text-center text-white-50">
-    <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2023</div>
+    <div class="container px-4 px-lg-5">Copyright &copy; QBuscas.com</div>
   </footer>
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
