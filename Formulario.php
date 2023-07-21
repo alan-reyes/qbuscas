@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/estilo.css">
+    <link rel="stylesheet" type="text/css" href="styles/estilo2.css">
     <title>Formulario de registro</title>
 
     <script>

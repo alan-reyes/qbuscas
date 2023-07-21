@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color:white;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://raw.githubusercontent.com/alan-reyes/qbuscas/main/src/neg-gal/Plaza_celistino_gasca_y_templo_de_San_Francisco_de_Asis_05_1%20(2).jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+/* Estilos para la sección del formulario */
+.form_section {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+/* Estilos para los encabezados */
+.form_header {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: orangered;
+}
+
+/* Estilos para los campos de entrada */
+.input_forms {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px ;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+/* Estilos para el botón de envío */
+.input_button {
+  width: 100%;
+  padding: 10px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input_button:hover {
+  background-color: #ff7f00;
+}
+
+/* Estilos para la lista desplegable */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+/* Estilos para el campo de texto cuando la categoría es "otra" */
+#campo-otra {
+  margin-top: 10px;
+}
+
+#campo-otra label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#campo-otra input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+/* Diseño responsivo */
+
+@media screen and (max-width: 450px) {
+  .form_section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .form_terms {
+    height: 80px;
+  }
+
+  .input_button {
+    margin: 0 0 0 11px;
+  }
+}
