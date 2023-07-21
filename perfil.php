@@ -15,21 +15,23 @@
           $id = (int) $_GET['id'];
       } else {
           $id = 6;
-          $nombreneg = "";
-          $imagen =""; 
-          $alias ="";
-          $telefono = "";
-          $correo = "";
-          $caracteristica1 ="";
-          $caracteristica2 ="";
-          $caracteristica3 ="";
-          $caracteristica4 ="";
-          $caracteristica5 ="";
-          $descripcion = "";
-          $categoria = "";
+          
 
 
       }
+      $nombreneg = "";
+      $imagen =""; 
+      $telefono = "";
+      $alias ="";
+      $caracteristica1 ="";
+      $correo = "";
+      $caracteristica3 ="";
+      $caracteristica2 ="";
+      $caracteristica5 ="";
+      $caracteristica4 ="";
+      $categoria = "";
+      $descripcion = "";
+      $garantia = "";
 
       if ($id > 0) {
         try 
@@ -53,8 +55,7 @@
                 $caracteristica4 = $row['caracteritica4'];
                 $telefono = $row['telefono'];
                 $correo = $row['correo'];
-
-
+                $garantia = $row ['garantia'];
             }                
             sqlsrv_free_stmt($getUser);
             sqlsrv_close($conn);
@@ -146,28 +147,36 @@
           </div>
 
 
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 offset-md-3">
-                <div class="custom-section">
-                  <img src="img/logo-titulo-universitario.png" alt="Imagen" onclick="showImage(this)">
-                  <h1 style="color: white;">Garantía</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <?php 
+          if($garantia != null){
+            ?>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="custom-section">
+                      <img src="img/logo-titulo-universitario.png" alt="Imagen" onclick="showImage(this)">
+                      <h1 style="color: white;">Garantía</h1>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        
-          <!-- Modal para mostrar la imagen en grande -->
-          <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <img id="modalImage" src="" alt="Imagen en grande">
+            
+              <!-- Modal para mostrar la imagen en grande -->
+              <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <img id="modalImage" src="" alt="Imagen en grande">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            <?php
+          }
+        ?>
+
+          
         
           <!-- Scripts de Bootstrap -->
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
