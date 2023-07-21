@@ -64,6 +64,7 @@
                 $imagenservicio1 =$row['imagen_servicio1'];
                 $imagenservicio2 =$row['imagen_servicio2'];
                 $imagenservicio3 =$row['imagen_servicio3'];
+                $direccion = $row['direccion'];
 
             }                
             sqlsrv_free_stmt($getUser);
@@ -116,6 +117,7 @@
                   <h2>Contacto</h2>
                   <h3><?php echo $telefono; ?></h3>
                   <h5><?php echo $correo; ?></h5>
+                  <h6><?php echo $direccion; ?></h6>
                 </div>
             </div>
         </div>
