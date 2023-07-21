@@ -73,3 +73,11 @@
     background-color: #FFFFFF99;
 
    }
+   .carousel-inner img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+  .imgcarru{
+    max-height: 500px;
+  }
