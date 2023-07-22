@@ -28,12 +28,9 @@
         placeholder="Ingrese el nombre de su negocio" required>
 
       <input class="input_forms" type="text" name="alias"
-        placeholder=" Ingrese un alias de su persona o negocio">
-
-        <p>Agrega la imagen principal que se mostrara de tu producto/servicio</p>
-      <input type="file" name="image_uno" id="image_uno">
-      <p>Test imagen</p>
-      <input type="file" name="imagen" id="imagen">
+        placeholder=" Ingrese un alias de su persona o negocio">      
+      <p>Agrega la imagen principal que se mostrara de tu producto/servicio</p>
+      <input type="file" name="imagen" id="imagen" required>
       <hr>
 
       <p>DATOS DE CONTACTO:</p>
@@ -62,7 +59,16 @@
         placeholder="Caracteristica 3">
       <input class="input_forms" type="text" name="Caracteristica4"
         placeholder="Caracteristica 4">
-        
+
+
+      <p>Agrega 3 imagenes de tu producto/servicio</p>
+      
+      <input type="file" name="imagen1" id="imagen1" class="inpimmg" required>
+      <br>
+      <input type="file" name="imagen2" id="imagen2" class="inpimmg" required>
+      <br>
+      <input type="file" name="imagen3" id="imagen3" class="inpimmg" required>
+
       <hr>
     
       <p>CATEGORIA DE SU NEGOCIO:</p>
@@ -82,9 +88,9 @@
 
       <p>Garantia:</p>
       <input class="input_forms" type="text" name="garantia"
-        placeholder="Cuenta con algún documento que avale su servicio/producto">
+        placeholder="Cuenta con algún documento que avale su servicio/producto" required>
       <p>Agrega una imagen de tu constancia o certificado de su oficio, profesión o negocio</p>
-      <input type="text" name="contancia">
+      <input type="file" name="imagen4" required>
 
       <input class="input_button" type="submit" value="Registrar">
         </form>
