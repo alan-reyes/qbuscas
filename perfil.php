@@ -50,7 +50,6 @@
              while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC))
             {
                 $nombreneg = $row['nombreNeg']; 
-                $imagen = $row['image_uno'];
                 $alias = $row['alias'];
                 $descripcion = $row ['descripcion'];
                 $caracteristica1 = $row['caracteritica1'];
@@ -59,12 +58,13 @@
                 $caracteristica4 = $row['caracteritica4'];
                 $telefono = $row['telefono'];
                 $correo = $row['correo'];
-                $garantia = $row ['garantia'];
-                $imagarantia = $row ['imagen_garantia'];
-                $imagenservicio1 =$row['imagen_servicio1'];
-                $imagenservicio2 =$row['imagen_servicio2'];
-                $imagenservicio3 =$row['imagen_servicio3'];
+                $garantia = $row ['garantia'];               
                 $direccion = $row['direccion'];
+                $imagenBase64 = base64_encode($row['imagen']);
+                $imagenBase641 = base64_encode($row['imagen1']);
+                $imagenBase642 = base64_encode($row['imagen2']);
+                $imagenBase643 = base64_encode($row['imagen3']);
+                $imagenBase644 = base64_encode($row['imagen4']);
 
             }                
             sqlsrv_free_stmt($getUser);
@@ -86,7 +86,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <img src="<?php echo $imagen?>" alt="Imagen de la persona"class="img-fluid">
+                    <img src="<?php echo 'data:image/jpeg;base64,'.$imagenBase64?>" alt="Imagen de la persona"class="img-fluid">
                 </div>
             </div>
         </div>
@@ -134,13 +134,13 @@
           <!-- Slides -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="<?php echo $imagenservicio1;?>" alt="Imagen 1" class="imgcarru">
+              <img src="<?php echo 'data:image/jpeg;base64,'.$imagenBase641?>" alt="Imagen 1" class="imgcarru">
             </div>
             <div class="carousel-item">
-              <img src="<?php echo $imagenservicio2;?>" alt="Imagen 2" class="imgcarru">
+              <img src="<?php echo 'data:image/jpeg;base64,'.$imagenBase642;?>" alt="Imagen 2" class="imgcarru">
             </div>
             <div class="carousel-item">
-              <img src="<?php echo $imagenservicio3;?>" alt="Imagen 3" class="imgcarru">
+              <img src="<?php echo 'data:image/jpeg;base64,'.$imagenBase643;?>" alt="Imagen 3" class="imgcarru">
             </div>
           </div>
 
@@ -196,7 +196,7 @@
                 <div class="row">
                   <div class="col-md-6 offset-md-3">
                     <div class="custom-section">
-                      <img src="<?php echo $imagarantia;?>" alt="Imagen" onclick="showImage(this)">
+                      <img src="<?php echo 'data:image/jpeg;base64,'.$imagenBase644;?>" alt="Imagen" onclick="showImage(this)">
                       <h1 style="color: white;">Garantía</h1>
                       <h2><?php echo $garantia;?></h2>
                     </div>
