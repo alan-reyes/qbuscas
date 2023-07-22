@@ -104,8 +104,7 @@ if ($id > 0) {
         </div>
       </div>
     </div>
-    <div class="gallery-section">
-      <h2 class="title-secciones">Secciones</h2>
+    <div class="gallery-section">      
       <!-- <nav>
         <ul class="navbar-secciones">
           <li class="item__navbar"><a href="">Todos</a></li>
@@ -121,27 +120,41 @@ if ($id > 0) {
       <ul class="cards">
       <?php
 // llenado de galeria
-include 'functions/coneccion.php';
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-$sql = "SELECT alias, descripcion, categoria, image_uno FROM formulario2";
-$getUser = sqlsrv_query($conn, $sql);
 
-    // output data of each row
-    while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC)) {                
-        $nombreNeg = $row['nombreNeg'];
-        $descripcion = $row['descripcion'];
-        $categoria = $row['categoria'];
-        $image_uno = $row['image_uno'];
-        echo 
+      $idItem = "";
+      $nombreneg = "";
+      $imagen ="";               
+      $categoria = "";
+      $descripcion = "";      
+
+try 
+    {                
+      include 'functions/coneccion.php';
+      $conn = sqlsrv_connect($serverName, $connectionOptions);
+      $tsql = "SELECT * FROM formulario2";
+      $getUser = sqlsrv_query($conn, $tsql);
+      $userName = '';
+      if ($getUser == FALSE)
+      die(FormatErrors(sqlsrv_errors()));                
+       while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC))
+      {          
+          $nombreneg = $row['nombreNeg']; 
+          $imagen = $row['image_uno'];          
+          $descripcion = $row['descripcion'];    
+          $idItem = $row['id']   
+          
+          if($idItem == 15) {
+            break;
+          }
+
+          echo 
         '<li class="cards__item">
           <div class="card">
-            <img class="card__image" src="'.$image_uno.'">
+            <img class="card__image" src="'.$imagen.'">
             <div class="card__content">
-              <p class="card__category">Comida</p>
-              <p class="card__title">Restaurante La Época de Oro</p>
-              <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless
-                value that serves as a proportion. It dictates what amount of the available space inside the flex
-                container the item should take up.</p>
+              <p class="card__category"></p>
+              <p class="card__title">'.$nombreneg.'</p>
+              <p class="card__text">'.$descripcion.'</p>
               <div class="card__tags__section">
                 <button class="btn btn--block card__btn">Restuarant</button>
                 <button class="btn btn--block card__btn">Comida</button>
@@ -150,7 +163,12 @@ $getUser = sqlsrv_query($conn, $sql);
             </div>
           </div>
         </li>'; 
-    }
+      }                
+      sqlsrv_free_stmt($getUser);
+      sqlsrv_close($conn);
+    } catch (Exception $e) {
+      echo("Error!");
+    }   
 
 ?>  
                
