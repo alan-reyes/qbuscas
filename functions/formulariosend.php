@@ -15,20 +15,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Caracteristica2 = $_POST["Caracteristica2"];
     $Caracteristica3 = $_POST["Caracteristica3"];
     $Caracteristica4 = $_POST["Caracteristica4"];
-    $Caracteristica5 = $_POST["Caracteristica5"];
     $Descripcion = $_POST["Descripcion"];
     $categoria = $_POST["categoria"];
     $direccion = $_POST["direccion"];
     $garantia = $_POST["garantia"];
     $imagen_garantia = $_POST["contancia"];
-    $image_uno = $_POST["image_uno"];
-
+    //$image_uno = $_POST["image_uno"];
+    $image_uno = "";
+    $nombreImagen = $_FILES["imagen"]["name"];
+    $imagenTemp = $_FILES["imagen"]["tmp_name"];
+    $imagenContenido = file_get_contents($imagenTemp);
     //$query3= "INSERT into formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,caracteritica5,descripcion,categoria) values ('jair','halojair','2331054684','halojair117@gmial.com','color rojo','1 kilo','10 x 30','plastico', 'acero inoxidable', 'juguete bonito', 'turismo');";
     // 
+    $sql = "INSERT INTO formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion,nombre,imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CONVERT(varbinary(max) ,?)";
+    $params = array(
+        $nombreNegocio, $alias, $telefono, $correo, $Caracteristica1, $Caracteristica2, $Caracteristica3, $Caracteristica4, $Descripcion, $categoria, 
+        $image_uno, $garantia, $imagen_garantia, 'hola','hola','hola', $direccion, $nombreImagen, $imagenContenido);
+//    $params = array("'".$nombreNegocio."'", $alias, $telefono, $correo, $Caracteristica1, $Caracteristica2, $Caracteristica3, $Caracteristica4, $Descripcion, $categoria, $image_uno, $garantia, $imagen_garantia, 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', '', $direccion, $nombreImagen, $imagenContenido);
+
     // Realizar la consulta para verificar si el correo existe en la tabla Usuarios
-    $query2 = "INSERT into formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion) values ('$nombreNegocio','$alias','$telefono','$correo','$Caracteristica1','$Caracteristica2','$Caracteristica3','$Caracteristica4', '$Descripcion', '$categoria','.$image_uno.','.$garantia.', '.$imagen_garantia.', 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', '', '.$direccion.' )";
+    //$query2 = "INSERT into formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion,nombre,imagen) values ('$nombreNegocio','$alias','$telefono','$correo','$Caracteristica1','$Caracteristica2','$Caracteristica3','$Caracteristica4', '$Descripcion', '$categoria','.$image_uno.','.$garantia.', '.$imagen_garantia.', 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', '', '.$direccion.' ,?, CONVERT(varbinary(max), ?))";
     //$query = "INSERT INTO Usuarios (nombre, apellido_materno, apellido_paterno, correo, nombre_usuario, clave, rol) VALUES ('$Nombre', '$apellido_materno', '$apellido_paterno', '$Correo', '$nombre_usuario', '$Contra', '$rol')";
-    $stmt = sqlsrv_query($conn, $query2);
+    //$params = array($nombreImagen, $imagenContenido);
+    $stmt = sqlsrv_query($conn, $sql, $params);
 
 
     
@@ -54,7 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  
 
+    if ($stmt === false) {
+        die(print_r(sqlsrv_errors(), true));
+    }
 
+    sqlsrv_free_stmt($stmt);
+    sqlsrv_close($conn);
 
 // Impresión de la línea de código JavaScript en la página
   

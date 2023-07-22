@@ -22,7 +22,7 @@
   </head>
   <body>
     <section class="form_section">
-        <form action="functions/formulariosend.php" method="POST">
+        <form action="functions/formulariosend.php" method="POST" enctype="multipart/form-data">
         <h3 class="form_header">Formulario de registro</h3>
       <input class="input_forms" type="text" name="nombreNegocio"
         placeholder="Ingrese el nombre de su negocio" required>
@@ -31,7 +31,9 @@
         placeholder=" Ingrese un alias de su persona o negocio">
 
         <p>Agrega la imagen principal que se mostrara de tu producto/servicio</p>
-      <input type="file" name="image_uno">
+      <input type="file" name="image_uno" id="image_uno">
+      <p>Test imagen</p>
+      <input type="file" name="imagen" id="imagen">
       <hr>
 
       <p>DATOS DE CONTACTO:</p>
