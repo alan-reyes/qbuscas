@@ -22,7 +22,7 @@
   </head>
   <body>
     <section class="form_section">
-        <form action="functions/formulariosend.php" method="POST">
+        <form action="functions/formulariosend.php" method="POST" enctype="multipart/form-data">
         <h3 class="form_header">Formulario de registro</h3>
       <input class="input_forms" type="text" name="nombreNegocio"
         placeholder="Ingrese el nombre de su negocio" required>
@@ -30,8 +30,11 @@
       <input class="input_forms" type="text" name="alias"
         placeholder=" Ingrese un alias de su persona o negocio">
 
-      <input class="input_forms" type="text" name="direccion"
-        placeholder="Ingrese la direccion de su establecimiento">
+        <p>Agrega la imagen principal que se mostrara de tu producto/servicio</p>
+      <input type="file" name="image_uno" id="image_uno">
+      <p>Test imagen</p>
+      <input type="file" name="imagen" id="imagen">
+      <hr>
 
       <p>DATOS DE CONTACTO:</p>
 
@@ -41,27 +44,27 @@
       <input class="input_forms" type="email" name="correo"
         placeholder="Ingrese un correo electronico">
 
-      <p>AGREGA ALGUNAS IMAGENES DE SU NEGOCIO</p>
-      <input type="file" name="imagenes" multiple="multiple" required>
+      <input class="input_forms" type="text" name="direccion"
+        placeholder="Ingrese la direccion de su establecimiento">
 
-      <p>AGREGA UNA CONSTANCIA O CERTIFICADO DE SU OFICIO, PROFESION O NEGOCIO</p>
-      <input type="file" name="contancia">
-
-      <p>CARACTERISTICAS DE SU NEGOCIO:</p>
-      <input class="input_forms" type="text" name="Caracteristica1"
-        placeholder="Caracteristica 1" required>
-      <input class="input_forms" type="text" name="Caracteristica2"
-        placeholder="Caracteristica 2" required>
-      <input class="input_forms" type="text" name="Caracteristica3"
-        placeholder="Caracteristica 3" required>
-      <input class="input_forms" type="text" name="Caracteristica4"
-        placeholder="Caracteristica 4" required>
-        <input class="input_forms" type="text" name="Caracteristica5"
-        placeholder="Caracteristica 5" required>
+      <hr>
+      
       <p>DESCRIBE BREVEMENTE TU NEGOCIO:</p>
       <input class="input_forms" type="text" name="Descripcion"
         placeholder="Descripcion" required>
 
+      <p>CARACTERISTICAS DE SU NEGOCIO:</p>
+      <input class="input_forms" type="text" name="Caracteristica1"
+        placeholder="Caracteristica 1">
+      <input class="input_forms" type="text" name="Caracteristica2"
+        placeholder="Caracteristica 2">
+      <input class="input_forms" type="text" name="Caracteristica3"
+        placeholder="Caracteristica 3">
+      <input class="input_forms" type="text" name="Caracteristica4"
+        placeholder="Caracteristica 4">
+        
+      <hr>
+    
       <p>CATEGORIA DE SU NEGOCIO:</p>
       <label for="categoria">Categoría:</label>
       <select id="categoria" onchange="mostrarCampoOtra()" required name="categoria">
@@ -76,8 +79,14 @@
         <label for="otra-categoria">Ingresa la categoría:</label>
         <input type="text" id="otra-categoria">
       </div>
-      <input class="input_button" type="submit" value="Registrar">
 
+      <p>Garantia:</p>
+      <input class="input_forms" type="text" name="garantia"
+        placeholder="Cuenta con algún documento que avale su servicio/producto">
+      <p>Agrega una imagen de tu constancia o certificado de su oficio, profesión o negocio</p>
+      <input type="text" name="contancia">
+
+      <input class="input_button" type="submit" value="Registrar">
         </form>
     </section>
 

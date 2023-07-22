@@ -33,6 +33,9 @@
       $descripcion = "";
       $garantia = "";
       $imagarantia = "";
+      $imagenservicio1 ="";
+      $imagenservicio2 ="";
+      $imagenservicio3 ="";
 
       if ($id > 0) {
         try 
@@ -58,6 +61,11 @@
                 $correo = $row['correo'];
                 $garantia = $row ['garantia'];
                 $imagarantia = $row ['imagen_garantia'];
+                $imagenservicio1 =$row['imagen_servicio1'];
+                $imagenservicio2 =$row['imagen_servicio2'];
+                $imagenservicio3 =$row['imagen_servicio3'];
+                $direccion = $row['direccion'];
+
             }                
             sqlsrv_free_stmt($getUser);
             sqlsrv_close($conn);
@@ -109,12 +117,44 @@
                   <h2>Contacto</h2>
                   <h3><?php echo $telefono; ?></h3>
                   <h5><?php echo $correo; ?></h5>
+                  <h6><?php echo $direccion; ?></h6>
                 </div>
             </div>
         </div>
 
+        
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicadores -->
+          <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ul>
+
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="<?php echo $imagenservicio1;?>" alt="Imagen 1" class="imgcarru">
+            </div>
+            <div class="carousel-item">
+              <img src="<?php echo $imagenservicio2;?>" alt="Imagen 2" class="imgcarru">
+            </div>
+            <div class="carousel-item">
+              <img src="<?php echo $imagenservicio3;?>" alt="Imagen 3" class="imgcarru">
+            </div>
+          </div>
+
+          <!-- Controles -->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
 
 
+        <!---
         <div class="container" id="tabla">
             <div class="table-responsive">
               <table class="table">
@@ -148,7 +188,7 @@
             </div>
           </div>
 
-
+      -->
         <?php 
           if($garantia != null){
             ?>
