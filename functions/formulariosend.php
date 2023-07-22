@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imagenContenido = file_get_contents($imagenTemp);
     //$query3= "INSERT into formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,caracteritica5,descripcion,categoria) values ('jair','halojair','2331054684','halojair117@gmial.com','color rojo','1 kilo','10 x 30','plastico', 'acero inoxidable', 'juguete bonito', 'turismo');";
     // 
-    $sql = "INSERT INTO formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion,nombre,imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CONVERT(varbinary(max) ,?)";
+    $sql = "INSERT INTO formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion,nombre,imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CONVERT(varbinary(max) ,?))";
     $params = array(
         $nombreNegocio, $alias, $telefono, $correo, $Caracteristica1, $Caracteristica2, $Caracteristica3, $Caracteristica4, $Descripcion, $categoria, 
         $image_uno, $garantia, $imagen_garantia, 'hola','hola','hola', $direccion, $nombreImagen, $imagenContenido);
