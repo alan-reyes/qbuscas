@@ -139,21 +139,21 @@ try
        while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC))
       {          
           $nombreneg = $row['nombreNeg']; 
-          $imagen = $row['image_uno'];          
+          $imagen = base64_encode($row['imagen']);          
           $descripcion = $row['descripcion'];    
-          $idItem = $row['id']   
+          $idItem = (int) $row['id'];
           
-          if($idItem == 15) {
+          if($idItem == 14) {
             break;
           }
 
           echo 
         '<li class="cards__item">
           <div class="card">
-            <img class="card__image" src="'.$imagen.'">
+            <img class="card__image" src="data:image/jpeg;base64,' .$imagen. '">
             <div class="card__content">
               <p class="card__category"></p>
-              <p class="card__title">'.$nombreneg.'</p>
+              <a class="card__title" href="perfil.php?id='.$idItem.'">'.$nombreneg.'</a>
               <p class="card__text">'.$descripcion.'</p>
               <div class="card__tags__section">
                 <button class="btn btn--block card__btn">Restuarant</button>
