@@ -97,14 +97,17 @@ if ($id > 0) {
         <div class="text-center">
           <form action="">
             <div class="group mx-auto my-0 ">
-              <input id="search" type="search" class="input" placeholder="Restaurante, taxista, doctor...">
+              <input required id="search" type="search" class="input" name="search" placeholder="Restaurante, taxista, doctor...">
             </div>
-            <button class="btn btn-primary"  id="Buscar" type="submit">Buscar</button>
+            <button class="btn btn-primary" id="Buscar" method="get">Buscar</button>
           </form>
         </div>
       </div>
     </div>
-    <div class="gallery-section">      
+
+    <?php
+    
+  echo '<div class="gallery-section">      
       <!-- <nav>
         <ul class="navbar-secciones">
           <li class="item__navbar"><a href="">Todos</a></li>
@@ -117,8 +120,10 @@ if ($id > 0) {
       </nav> -->        
 
       <!-- Cards -->
-      <ul class="cards">
-      <?php
+      <ul class="cards">';
+      $searchValue = "";
+      $searchValue = $_GET['search'] ?? null;
+    
 // llenado de galeria
 
       $idItem = "";
@@ -127,53 +132,56 @@ if ($id > 0) {
       $categoria = "";
       $descripcion = "";      
 
-try 
-    {                
-      include 'functions/coneccion.php';
-      $conn = sqlsrv_connect($serverName, $connectionOptions);
-      $tsql = "SELECT * FROM formulario2";
-      $getUser = sqlsrv_query($conn, $tsql);
-      $userName = '';
-      if ($getUser == FALSE)
-      die(FormatErrors(sqlsrv_errors()));                
-       while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC))
-      {          
-          $nombreneg = $row['nombreNeg']; 
-          $imagen = base64_encode($row['imagen']);          
-          $descripcion = $row['descripcion'];    
-          $idItem = (int) $row['id'];
-          
-          if($idItem == 14) {
-            break;
-          }
-
-          echo 
-        '<li class="cards__item">
-          <div class="card">
-            <img class="card__image" src="data:image/jpeg;base64,' .$imagen. '">
-            <div class="card__content">
-              <p class="card__category"></p>
-              <a class="card__title" href="perfil.php?id='.$idItem.'">'.$nombreneg.'</a>
-              <p class="card__text">'.$descripcion.'</p>
-              <div class="card__tags__section">
-                <button class="btn btn--block card__btn">Restuarant</button>
-                <button class="btn btn--block card__btn">Comida</button>
-                <button class="btn btn--block card__btn">Café</button>
+      try 
+      {                
+        include 'functions/coneccion.php';
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
+        $tsql = "SELECT * FROM formulario2 WHERE nombreNeg LIKE '%".$searchValue."%'";
+        $getUser = sqlsrv_query($conn, $tsql);
+        $userName = '';
+        if ($getUser == FALSE)
+        die(FormatErrors(sqlsrv_errors()));                
+         while($row = sqlsrv_fetch_array($getUser, SQLSRV_FETCH_ASSOC))
+        {          
+            $nombreneg = $row['nombreNeg']; 
+            $imagen = base64_encode($row['imagen']);          
+            $descripcion = $row['descripcion'];    
+            $idItem = (int) $row['id'];
+            
+            if($idItem == 12) {
+              break;
+            }
+  
+            echo 
+          '<li class="cards__item">
+            <div class="card">
+              <img class="card__image" src="data:image/jpeg;base64,' .$imagen. '">
+              <div class="card__content">
+                <p class="card__category"></p>
+                <a class="card__title" href="perfil.php?id='.$idItem.'">'.$nombreneg.'</a>
+                <p class="card__text">'.$descripcion.'</p>
+                <div class="card__tags__section">
+                  <button class="btn btn--block card__btn">Restuarant</button>
+                  <button class="btn btn--block card__btn">Comida</button>
+                  <button class="btn btn--block card__btn">Café</button>
+                </div>
               </div>
             </div>
-          </div>
-        </li>'; 
-      }                
-      sqlsrv_free_stmt($getUser);
-      sqlsrv_close($conn);
-    } catch (Exception $e) {
-      echo("Error!");
-    }   
+          </li>'; 
+        }                
+        sqlsrv_free_stmt($getUser);
+        sqlsrv_close($conn);
+      } catch (Exception $e) {
+        echo("Error!");
+      } 
+      
 
 ?>  
                
       </ul>
     </div>
+          
+    ?>
   </main>
   <!-- Footer-->
   <footer class="footer bg-black small text-center text-white-50">
