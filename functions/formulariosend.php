@@ -25,12 +25,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreImagen = $_FILES["imagen"]["name"];
     $imagenTemp = $_FILES["imagen"]["tmp_name"];
     $imagenContenido = file_get_contents($imagenTemp);
+    $imagenTemp1 = $_FILES["imagen1"]["tmp_name"];
+    $imagenContenido1 = file_get_contents($imagenTemp1);
+    $imagenTemp2 = $_FILES["imagen2"]["tmp_name"];
+    $imagenContenido2 = file_get_contents($imagenTemp2);
+    $imagenTemp3 = $_FILES["imagen3"]["tmp_name"];
+    $imagenContenido3 = file_get_contents($imagenTemp3);
+    $imagenTemp4 = $_FILES["imagen4"]["tmp_name"];
+    $imagenContenido4 = file_get_contents($imagenTemp4);
     //$query3= "INSERT into formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,caracteritica5,descripcion,categoria) values ('jair','halojair','2331054684','halojair117@gmial.com','color rojo','1 kilo','10 x 30','plastico', 'acero inoxidable', 'juguete bonito', 'turismo');";
     // 
-    $sql = "INSERT INTO formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion,nombre,imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CONVERT(varbinary(max) ,?))";
+    $sql = "INSERT INTO formulario2 (nombreNeg,alias,telefono,correo,caracteritica1,caracteritica2,caracteritica3,caracteritica4,descripcion,categoria,image_uno,garantia,imagen_garantia,imagen_servicio1,imagen_servicio2,imagen_servicio3,direccion,nombre,imagen, imagen1,imagen2,imagen3,imagen4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CONVERT(varbinary(max) ,?),CONVERT(varbinary(max) ,?), CONVERT(varbinary(max) ,?), CONVERT(varbinary(max) ,?), CONVERT(varbinary(max) ,?))";
     $params = array(
         $nombreNegocio, $alias, $telefono, $correo, $Caracteristica1, $Caracteristica2, $Caracteristica3, $Caracteristica4, $Descripcion, $categoria, 
-        $image_uno, $garantia, $imagen_garantia, 'hola','hola','hola', $direccion, $nombreImagen, $imagenContenido);
+        $image_uno, $garantia, $imagen_garantia, 'hola','hola','hola', $direccion, $nombreImagen, $imagenContenido, $imagenContenido1 , $imagenContenido2, $imagenContenido3, $imagenContenido4);
 //    $params = array("'".$nombreNegocio."'", $alias, $telefono, $correo, $Caracteristica1, $Caracteristica2, $Caracteristica3, $Caracteristica4, $Descripcion, $categoria, $image_uno, $garantia, $imagen_garantia, 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', 'https://qbucasimages.blob.core.windows.net/images/cafetales.jpeg', '', $direccion, $nombreImagen, $imagenContenido);
 
     // Realizar la consulta para verificar si el correo existe en la tabla Usuarios
