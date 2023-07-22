@@ -11359,7 +11359,7 @@ img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
+  width: 100%;
   &:hover {
     .card__image {
       filter: contrast(100%);
